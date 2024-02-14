@@ -195,7 +195,10 @@ export default class MapGenerator {
     });
 
     // @ts-ignore
-    const images = (this.map.style.imageManager || {}).images || [];
+    let images = (this.map.style.imageManager || {}).images || [];
+    if (images && typeof images[''] === 'object') {
+      images = images[''];
+    }
     Object.keys(images).forEach((key) => {
       renderMap.addImage(key, images[key].data);
     });
