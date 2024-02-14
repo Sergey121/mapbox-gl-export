@@ -16,7 +16,8 @@
     "build:example": "webpack --mode production --config webpack.config.js",
     "build:cdn": "webpack --mode production --config webpack.cdn.config.js && cp ./dist/cdn/mapbox-gl-export.js ./example/. && cp ./css/styles.css ./example/mapbox-gl-export.css",
     "dev": "webpack serve --mode development --open --hot --config webpack.config.js",
-    "deploy": "gh-pages -d example -m 'deploy to gh-pages'"
+    "deploy": "gh-pages -d example -m 'deploy to gh-pages'",
+    "postinstall": "npm run build"
   },
   "keywords": [
     "mapbox",
